@@ -151,7 +151,7 @@ insert into  categoria(ID_categoria, genero , edad) values(3,		"masculino", 	15)
 insert into  torneo (ID_torneo, nombre ,lugar ,ID_categoria,ID_fixture) values(	1,	"Suramericana", "Mexico", 1,	1	);
 insert into  torneo (ID_torneo, nombre ,lugar,ID_categoria,ID_fixture ) values(	2,	"Liga promaster", "Colombia", 2,	2	);
 insert into  torneo (ID_torneo, nombre ,lugar ,ID_categoria,ID_fixture) values(	3,	"BBA", "Bolivia", 3,	1	);
-	insert into  torneo (ID_torneo, nombre ,lugar ,ID_categoria,ID_fixture) values(	3,	"Warirors", "Argentina", 3,	2	);
+	insert into  torneo (ID_torneo, nombre ,lugar ,ID_categoria,ID_fixture) values(	4,	"Warirors", "Argentina", 3,	2	);
 
 
 
@@ -443,7 +443,7 @@ INSERT INTO ranking_indv (ID_ranking_indv,descripcion)values (1,"se muestra el m
 
 
 INSERT INTO jugador_ranking_indv (ID_ranking_indv,ID_jugador,puesto)
-SELECT  j.ID_jugador
+SELECT  1,j.ID_jugador,1
 from jugador j inner join estadistica_indv e on j.Id_jugador =e.Id_jugador 
   where e.canastas= (select max(e.canastas)from estadistica_indv e) ;
 
