@@ -3,7 +3,8 @@
     Created on : 22-nov-2017, 21:11:46
     Author     : luis_
 --%>
-
+<%@page import="java.sql.*"%>
+<%@page import="conneccion.ConnecionMYSQL"%>
 <!DOCTYPE html>
 
 <html>
@@ -99,24 +100,30 @@
     <th>Genero Jugador</th>
     <th>Equipo</th>
   </tr>
-  <tr>
-    <td>Juan</td>
-    <td>1014.303.067</td>
-    <td>Male</td>
-    <td>Golden State</td>
-  </tr>
-  <tr>
-    <td>Cristian</td>
-    <td>1015.478.851</td>
-    <td>Male</td>
-    <td>Cleveland Cavaliers</td>
-  </tr>
-  <tr>
-    <td>Luis</td>
-    <td>1014.301.109</td>
-    <td>Male</td>
-    <td>Miami Heat</td>
-  </tr>
+  <%
+      Connection cnx = null;
+      Statement sta = null;
+      ResultSet rs= null;
+      try{
+      Class.forName("com.mysql.jdbc.Driver");
+      cnx =DriverManager.getConnection
+              ("jdbc:mysql://localhost/balonbases?user=root&password=Ltp980928");
+      sta=cnx.createStatement();
+      rs=sta.executeQuery("select j.nombre , j.documento, j.genero, e.nombre  from jugador j inner join equipo e on j.ID_equipo=e.ID_equipo ");
+      while (rs.next()){
+          %>
+          <tr>
+              <th><%=rs.getString(1) %></th>  
+              <th><%=rs.getString(2) %></th>
+                     <th><%=rs.getString(3) %></th> 
+                         <th><%=rs.getString(4) %></th> 
+                 
+          </tr>
+          <%
+      }
+      }
+      catch(Exception e){}      %>
+  
 </table></p>
 						</div>
 					</div>

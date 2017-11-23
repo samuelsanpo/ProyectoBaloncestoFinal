@@ -5,7 +5,8 @@
 --%>
 
 <!DOCTYPE html5>
-
+<%@page import="java.sql.*"%>
+<%@page import="conneccion.ConnecionMYSQL"%>
 <html>
 <head>
 <meta name="keywords" content="" />
@@ -97,14 +98,33 @@ Categoria:<br>
     <th>Nombre Torneo</th>
     <th>Lugar</th> 
     <th>Fixture</th>
-    <th>Categoria</th>
+    <th>Genero</th>
+    <th>Categoria(años)</th>
   </tr>
-  <tr>
-    <td>null</td>
-    <td>null</td>
-    <td>null</td>
-    <td>null</td>
-  </tr>
+  <%
+      Connection cnx = null;
+      Statement sta = null;
+      ResultSet rs= null;
+      try{
+      Class.forName("com.mysql.jdbc.Driver");
+      cnx =DriverManager.getConnection
+              ("jdbc:mysql://localhost/balonbases?user=root&password=Ltp980928");
+      sta=cnx.createStatement();
+      rs=sta.executeQuery("select t.nombre ,t.lugar, f.descripcion,c.genero,c.edad from torneo t inner join fixture f on t.ID_fixture = f.ID_fixture inner join categoria c on t.ID_categoria= c.ID_categoria ");
+      while (rs.next()){
+          %>
+          <tr>
+              <th><%=rs.getString(1) %></th>  
+              <th><%=rs.getString(2) %></th>
+                     <th><%=rs.getString(3) %></th> 
+                         <th><%=rs.getString(4) %></th> 
+                         <th><%=rs.getString(5) %></th> 
+                 
+          </tr>
+          <%
+      }
+      }
+      catch(Exception e){}      %>
   
 </table> </p>
 </div>
