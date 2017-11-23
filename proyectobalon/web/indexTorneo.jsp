@@ -66,11 +66,17 @@ Fixture:<br>
 </select><br><br>
 
 
-Categoria:<br>
+Genero:<br>
 <select name="Torneo">
-<option value="1">Masculino/20</option>
-<option value="2">Femenino/20</option>
-<option value="3">Masculino/15</option>
+<option value="1">Masculino</option>
+<option value="2">Femenino</option>
+
+</select><br><br>
+Edad:<br>
+<select name="Torneo">
+<option value="1">20</option>
+<option value="2">15</option>
+
 
 </select><br><br>
 <button class="button">Crear torneo</button>
@@ -85,15 +91,16 @@ Categoria:<br>
 <div class="entry">
 <p><class=" alignleft border" />
   <br>
+    <script  src="BuscadorTabla.js" type="text/javascript"></script>
 <div class="field" id="searchform">
-  <input type="text" id="searchterm" placeholder="Buscar un torneo" />
-  <button type="button" id="search">Buscar</button>
+  <input type="text" id="searchterm" onkeyup="doSearch()" placeholder="Buscar un torneo" />
+  
 </div>
 <br>
   <br>
 
-
-<table style="width:170%">
+  
+<table id="datos" >
 <tr>
     <th>Nombre Torneo</th>
     <th>Lugar</th> 
@@ -108,7 +115,7 @@ Categoria:<br>
       try{
       Class.forName("com.mysql.jdbc.Driver");
       cnx =DriverManager.getConnection
-              ("jdbc:mysql://localhost/balonbases?user=root&password=Ltp980928");
+              ("jdbc:mysql://localhost/balonbases?user=root&password=Online123");
       sta=cnx.createStatement();
       rs=sta.executeQuery("select t.nombre ,t.lugar, f.descripcion,c.genero,c.edad from torneo t inner join fixture f on t.ID_fixture = f.ID_fixture inner join categoria c on t.ID_categoria= c.ID_categoria ");
       while (rs.next()){

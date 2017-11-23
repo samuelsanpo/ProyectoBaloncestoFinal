@@ -105,7 +105,7 @@
       try{
       Class.forName("com.mysql.jdbc.Driver");
       cnx =DriverManager.getConnection
-              ("jdbc:mysql://localhost/balonbases?user=root&password=Ltp980928");
+              ("jdbc:mysql://localhost/balonbases?user=root&password=Online123");
       sta=cnx.createStatement();
       rs=sta.executeQuery("select e.nombre ,en.nombre, e.color, t.nombre  from equipo e inner join entrenador en on e.ID_entrenador = en.ID_entrenador inner join torneo t on e.ID_torneo = t.ID_torneo ");
       while (rs.next()){

@@ -20,7 +20,7 @@ public class ConnecionMYSQL {
 	// DECLARACIÓN DE VARIABLES
 	// -----------------------------------------------------------------
 	private String USER = "root";
-        private String PASSWORD = "Ltp980928";
+        private String PASSWORD = "Online123";
         private String HOST = "localHost";
         private String PORT = "3306";
         private String DATABASE = "balonbases";

@@ -93,7 +93,11 @@
 						<h2 class="title"><a href="#">Jugadores Inscritos</a></h2>
 						<div class="entry">
 							<p><class="alignleft border" />
-								<table style="width:170%">
+                                                            
+                                                            
+                                                       
+                                                            
+								<table  style="width:170%">
   <tr>
     <th>Nombre Jugador</th>
     <th>Cedula Jugador</th> 
@@ -107,7 +111,7 @@
       try{
       Class.forName("com.mysql.jdbc.Driver");
       cnx =DriverManager.getConnection
-              ("jdbc:mysql://localhost/balonbases?user=root&password=Ltp980928");
+              ("jdbc:mysql://localhost/balonbases?user=root&password=Online123");
       sta=cnx.createStatement();
       rs=sta.executeQuery("select j.nombre , j.documento, j.genero, e.nombre  from jugador j inner join equipo e on j.ID_equipo=e.ID_equipo ");
       while (rs.next()){
