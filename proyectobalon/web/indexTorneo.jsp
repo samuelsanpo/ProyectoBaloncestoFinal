@@ -38,6 +38,10 @@
 <li class="current_page_item"><a href="indexTorneo.jsp">Torneos</a></li>
 <li ><a href="indexEquipo.jsp">Equipos</a></li>
 <li><a href="indexJugador.jsp">Jugadores</a></li>
+<li><a href="indexEstGrupal.jsp">Estadistica grupal</a></li>
+<li><a href="indexEstIndividual.jsp">Estadistica individual</a></li>
+
+
 
 </ul>
 </div>
@@ -123,7 +127,7 @@ Categoria:<br>
 </div>
 </div>
 
-
+necesitan que?
 <div class="post">
 
 <h2 class="title"><a href="#">Lista de torneos</a></h2>
@@ -138,7 +142,7 @@ Categoria:<br>
 <br>
   <br>
 
-  
+ 
 <table id="datos" >
 <tr>
     <th>Nombre Torneo</th>
@@ -154,7 +158,7 @@ Categoria:<br>
       try{
       Class.forName("com.mysql.jdbc.Driver");
       cnx =DriverManager.getConnection
-              ("jdbc:mysql://localhost/balonbases?user=root&password=011099");
+              ("jdbc:mysql://localhost/balonbases?user=root&password=Online123");
       sta=cnx.createStatement();
       rs=sta.executeQuery("select t.nombre ,t.lugar, f.descripcion,c.genero,c.edad from torneo t inner join fixture f on t.ID_fixture = f.ID_fixture inner join categoria c on t.ID_categoria= c.ID_categoria ");
       while (rs.next()){

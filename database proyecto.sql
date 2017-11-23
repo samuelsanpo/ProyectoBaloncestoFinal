@@ -20,7 +20,7 @@ add constraint FK_ID_fixture foreign key (ID_fixture)
 references fixture (ID_fixture);
 
 create table equipo
-(ID_equipo int not null,
+(ID_equipo int not null auto_increment,
 nombre varchar(100)not null,
 color varchar(50)not null,
 primary key(ID_equipo));

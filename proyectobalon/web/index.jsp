@@ -32,6 +32,11 @@
 			<li><a href="indexTorneo.jsp">Torneos</a></li>
 			<li><a href="indexEquipo.jsp">Equipos</a></li>
 			<li><a href="indexJugador.jsp">Jugadores</a></li>
+                        <li><a href="indexEstGrupal.jsp">Estadistica grupal</a></li>
+                         <li><a href="indexEstIndividual.jsp">Estadistica individual</a></li>
+                        
+
+
 			<li><a href="#"></a></li>
 		</ul>
 	</div>
@@ -49,7 +54,7 @@
 						</div>
 					</div>
 					<div class="post">
-						<h2 class="title"><a href="indexTorneo.html">Sudamericano. </a></h2>
+						<h2 class="title"><a href="indexDibujo.jsp">Sudamericano. </a></h2>
 						<p class="meta">Ultima Publicacion <a href="#"></a> el 23 Noviembre, 2017
 							&nbsp;&bull;&nbsp; <a href="#" class="comments">Comentarios (11)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Srticulo</a></p>
 						<div class="entry">
@@ -88,7 +93,7 @@
 						<li>
 							<h2>MVP</h2>
 							<p><img src="images/mvp.jpg" width="250" height="350" alt="" class="alignleft border" / ></p>
-							<p>Hola. </p>
+							<p>JUAN DAVID GONZALEZ </p>
 							<p></p>
 							
 						</li>
@@ -96,7 +101,7 @@
 							<h2>Mejor Equipo</h2>
 							<ul>
 							<p><img src="images/Equipo1.jpg" width="300" height="250" alt="" class="alignleft border" / ></p>
-							<p>Hola. </p>
+							<p>LEONES</p>
 							<p></p>
 							</ul>
 						</li>
@@ -104,7 +109,7 @@
 							<h2>Maximo Anotador</h2>
 							<ul>
 							<p><img src="images/Goleador1.png" width="300" height="250" alt="" class="alignleft border" / ></p>
-							<p>Hola. </p>
+							<p>EUDGENIO VARGAR </p>
 								
 							</ul>
 						</li>
