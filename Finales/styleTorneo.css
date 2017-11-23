@@ -431,3 +431,49 @@ img.aligncenter {
 #footer a {
 color: #ffffff;
 }
+
+
+
+
+
+
+.field {
+  display:flex;
+  
+  
+  width:169%;
+  height: auto;
+  
+  flex-direction:row;
+  
+}
+
+.field>input[type=text],
+
+
+.field>input[type=text] {
+  flex:1;
+  padding:0.6em;
+  border:0.2em solid rgb(0, 140, 186);
+}
+.field>button{
+display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #008CBA;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+	
+}
+.field>button:hover {background-color: #209CC5}
+  
+.field>button:active{
+  background-color: #008CBA;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);}
