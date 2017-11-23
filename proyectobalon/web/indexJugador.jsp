@@ -107,16 +107,16 @@
       try{
       Class.forName("com.mysql.jdbc.Driver");
       cnx =DriverManager.getConnection
-              ("jdbc:mysql://localhost/balonbases?user=root&password=Ltp980928");
+              ("jdbc:mysql://localhost/balonbases?user=root&password=011099");
       sta=cnx.createStatement();
       rs=sta.executeQuery("select j.nombre , j.documento, j.genero, e.nombre  from jugador j inner join equipo e on j.ID_equipo=e.ID_equipo ");
       while (rs.next()){
           %>
           <tr>
-              <th><%=rs.getString(1) %></th>  
-              <th><%=rs.getString(2) %></th>
-                     <th><%=rs.getString(3) %></th> 
-                         <th><%=rs.getString(4) %></th> 
+              <td><%=rs.getString(1) %></td>  
+              <td><%=rs.getString(2) %></td>
+                     <td><%=rs.getString(3) %></td> 
+                         <td><%=rs.getString(4) %></td> 
                  
           </tr>
           <%
