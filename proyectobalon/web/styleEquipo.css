@@ -19,6 +19,14 @@ body {
 	color: #7F7F81;
 }
 
+#overflowTest {
+    padding: 15px;
+    width: 170%;
+    height: 300px;
+    overflow: scroll;
+    border: 1px solid #ccc;
+}
+
 
 h1, h2, h3 {
 	margin: 0;
@@ -65,7 +73,7 @@ table {
     width: 100%;
 }
 th {
-    background-color: #191970;
+    background-color: #008CBA;
     color: white;
     padding: 8px;
 }

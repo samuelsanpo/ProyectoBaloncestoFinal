@@ -9,6 +9,14 @@ body {
 	color: #7F7F81;
 }
 
+#overflowTest {
+    padding: 15px;
+    width: 170%;
+    height: 300px;
+    overflow: scroll;
+    border: 1px solid #ccc;
+}
+
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -53,7 +61,7 @@ table {
     width: 100%;
 }
 th {
-    background-color: #6A5ACD;
+    background-color: #008CBA;
     color: white;
     padding: 8px;
 }

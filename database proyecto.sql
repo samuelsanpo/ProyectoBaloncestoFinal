@@ -1,6 +1,6 @@
 Create database balonbases; 
 use balonbases;
-create table torneo (ID_torneo int not null auto_increment, nombre varchar(100) not null, }
+create table torneo (ID_torneo int not null auto_increment, nombre varchar(100) not null, 
 	lugar varchar(100) not null, primary key (ID_torneo));
 create table categoria(ID_categoria int not null auto_increment,
  genero varchar(30) not null, edad int not null, primary key (ID_categoria));
@@ -43,7 +43,7 @@ create table estadistica_indv(ID_estadistica_indv int not null auto_increment, f
 alter table estadistica_indv 
 add column tiempo_jugado double not null;
 alter table estadistica_indv  
-add column precision double not null;
+add column precisio double not null;
 alter table estadistica_indv
 add column ID_jugador int not null;
  alter table estadistica_indv 

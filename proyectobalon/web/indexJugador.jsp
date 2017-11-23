@@ -87,13 +87,20 @@
 						</div>
 					</div>
 
+<br>
+<br>
+                                    <br>
+                                        	<h2 class="title"><a href="#">Jugadores Inscritos</a></h2>
+					<div id="overflowTest" class="post">
 
-					<div class="post">
-
-						<h2 class="title"><a href="#">Jugadores Inscritos</a></h2>
+					
 						<div class="entry">
 							<p><class="alignleft border" />
-								<table style="width:170%">
+                                                            
+                                                            
+                                                       
+                                                            
+								<table  style="width:100%">
   <tr>
     <th>Nombre Jugador</th>
     <th>Cedula Jugador</th> 
@@ -132,9 +139,6 @@
 				<!-- end #content -->
 				<div id="sidebar">
 					<ul>
-						
-						<li>
-							
 
 							<h2>Maxima Anotadora Mujer</h2>
 							<ul>
@@ -147,16 +151,13 @@
 							<p><img src="images/mvp.jpg" width="250" height="350" alt="" class="alignleft border" / ></p>
 							<p>Stephen Curry </p>
 							<p></p>
-
-							
-
-							
-						</li>
-						
+			
 					</ul>
 				</div>
+                                
 				<!-- end #sidebar -->
-				<div style="clear: both;">&nbsp;</div>
+				
+                                <div style="clear: both;">&nbsp;</div>
 			</div>
 		</div>
 	</div>
