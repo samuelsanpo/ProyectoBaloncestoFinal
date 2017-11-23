@@ -4,7 +4,8 @@
     Author     : luis_
 --%>
 <!DOCTYPE html>
-
+<%@page import="java.sql.*"%>
+<%@page import="conneccion.ConnecionMYSQL"%>
 <html>
 <head>
 <meta name="keywords" content="" />
@@ -97,24 +98,29 @@
     <th>Color</th>
     <th>Torneo</th>
   </tr>
-  <tr>
-    <td>Lakers</td>
-    <td>John Smith</td>
-    <td>Verde</td>
-    <td>Liga BBA</td>
-  </tr>
-  <tr>
-    <td>Wolfes</td>
-    <td>Jackson Marinez</td>
-    <td>Rojo</td>
-    <td>Liga BBA</td>
-  </tr>
-  <tr>
-    <td>Real Bañil</td>
-    <td>Doe Miths</td>
-    <td>Azul</td>
-    <td>Liga Warrior</td>
-  </tr>
+ <%
+      Connection cnx = null;
+      Statement sta = null;
+      ResultSet rs= null;
+      try{
+      Class.forName("com.mysql.jdbc.Driver");
+      cnx =DriverManager.getConnection
+              ("jdbc:mysql://localhost/balonbases?user=root&password=Ltp980928");
+      sta=cnx.createStatement();
+      rs=sta.executeQuery("select e.nombre ,en.nombre, e.color, t.nombre  from equipo e inner join entrenador en on e.ID_entrenador = en.ID_entrenador inner join torneo t on e.ID_torneo = t.ID_torneo ");
+      while (rs.next()){
+          %>
+          <tr>
+              <th><%=rs.getString(1) %></th>  
+              <th><%=rs.getString(2) %></th>
+                     <th><%=rs.getString(3) %></th> 
+                         <th><%=rs.getString(4) %></th> 
+                 
+          </tr>
+          <%
+      }
+      }
+      catch(Exception e){}      %>
 </table></p>
 						</div>
 					</div>
@@ -125,17 +131,30 @@
 					<ul>
 						
 						<li>
-							<h2 class="title">Mejores equipos</h2>
+							<h2 class="title">Mejor equipo</h2>
 
 							<ul>
-
-								<li>Equipo #1</li>
-								<li>Equipo #2</li>
-								<li>Equipo #3</li>
-								<li>Equipo #4</li>
-								<li>Equipo #5</li>
-							</ul>
-						</li>
+<%
+      
+      try{
+      Class.forName("com.mysql.jdbc.Driver");
+      cnx =DriverManager.getConnection
+              ("jdbc:mysql://localhost/balonbases?user=root&password=Ltp980928");
+      sta=cnx.createStatement();
+      rs=sta.executeQuery("select j.nombre  from equipo j inner join equipo_ranking_grupal e on j.ID_equipo =e.ID_equipo inner join ranking_grupal r on e.ID_ranking_grupal= r.ID_ranking_grupal");
+      while (rs.next()){
+      
+          %>
+         
+          <ul><li><%=rs.getString(1)%></li></ul>
+          <%
+      }
+      }
+      catch(Exception e){}      %>
+								
+								
+							
+						  
 						
 
 					</ul>
