@@ -1,3 +1,13 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22-nov-2017, 21:13:41
+    Author     : luis_
+*/
+
 
 
 body {
@@ -9,15 +19,6 @@ body {
 	color: #7F7F81;
 }
 
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
 
 h1, h2, h3 {
 	margin: 0;
@@ -32,7 +33,7 @@ h1 {
 
 h2 {
 	font-size: 2.4em;
-	color:#000080;
+	color:#191970;
 }
 
 h3 {
@@ -47,13 +48,24 @@ p, ul, ol {
 ul, ol {
 }
 
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 th {
-    background-color: #008CBA;
+    background-color: #191970;
     color: white;
     padding: 8px;
 }
@@ -83,10 +95,10 @@ tr:nth-child(even) {
   box-shadow: 0 9px #999;
 }
 
-.button:hover {background-color: #5088D5}
+.button:hover {background-color: #191970}
 
 .button:active {
-  background-color: #3e8e41;
+  background-color: #000080;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -94,7 +106,6 @@ tr:nth-child(even) {
 a {
 	text-decoration: none;
 	color: #3ABADF;
-        
 }
 
 a:hover {
@@ -290,11 +301,11 @@ img.aligncenter {
 
 .post .title {
 	letter-spacing: -1px;
-	color: #1757AB;
+	color: #191970;
 }
 
 .post .title a {
-	color: #7AC8D4;
+	color: #191970;
 	border: none;
 }
 
@@ -369,7 +380,7 @@ img.aligncenter {
 	height: 38px;
 	padding: 12px 0 0 15px;
 	letter-spacing: -1px;
-	color: #95C500;
+	color: #191970;
 }
 
 #sidebar p {
@@ -431,50 +442,3 @@ img.aligncenter {
 #footer a {
 color: #ffffff;
 }
-
-
-
-
-
-
-.field {
-  display:flex;
-  
-  
-  width:169%;
-  height: auto;
-  
-  flex-direction:row;
-  
-}
-
-.field>input[type=text],
-
-
-.field>input[type=text] {
-  flex:1;
-  padding:0.6em;
-  border:0.2em solid rgb(0, 140, 186);
-}
-.field>button{
-display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #008CBA;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-
-}
-.field>button:hover {background-color: #209CC5}
-  
-.field>button:active{
-  background-color: #008CBA;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);}
-
