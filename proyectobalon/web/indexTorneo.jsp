@@ -1,12 +1,19 @@
-<!DOCTYPE html5>
+<%-- 
+    Document   : indexTorneo
+    Created on : 22-nov-2017, 21:12:14
+    Author     : luis_
+--%>
 
+<!DOCTYPE html5>
+<%@page import="java.sql.*"%>
+<%@page import="conneccion.ConnecionMYSQL"%>
 <html>
 <head>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Torneos</title>
-<link href="styletorneo.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="styleTorneo.css" rel="stylesheet" type="text/css" media="screen" />
 <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 </head>
 <body>
@@ -26,10 +33,10 @@
 <!-- end #header -->
 <div id="menu">
 <ul>
-<li><a href="index.html">Inicio</a></li>
+<li><a href="index.jsp">Inicio</a></li>
 <li class="current_page_item"><a href="indexTorneo.jsp">Torneos</a></li>
-<li ><a href="indexEquipo.html">Equipos</a></li>
-<li><a href="indexJugador.html">Jugadores</a></li>
+<li ><a href="indexEquipo.jsp">Equipos</a></li>
+<li><a href="indexJugador.jsp">Jugadores</a></li>
 
 </ul>
 </div>
@@ -91,14 +98,33 @@ Categoria:<br>
     <th>Nombre Torneo</th>
     <th>Lugar</th> 
     <th>Fixture</th>
-    <th>Categoria</th>
+    <th>Genero</th>
+    <th>Categoria(años)</th>
   </tr>
-  <tr>
-    <td>null</td>
-    <td>null</td>
-    <td>null</td>
-    <td>null</td>
-  </tr>
+  <%
+      Connection cnx = null;
+      Statement sta = null;
+      ResultSet rs= null;
+      try{
+      Class.forName("com.mysql.jdbc.Driver");
+      cnx =DriverManager.getConnection
+              ("jdbc:mysql://localhost/balonbases?user=root&password=Ltp980928");
+      sta=cnx.createStatement();
+      rs=sta.executeQuery("select t.nombre ,t.lugar, f.descripcion,c.genero,c.edad from torneo t inner join fixture f on t.ID_fixture = f.ID_fixture inner join categoria c on t.ID_categoria= c.ID_categoria ");
+      while (rs.next()){
+          %>
+          <tr>
+              <th><%=rs.getString(1) %></th>  
+              <th><%=rs.getString(2) %></th>
+                     <th><%=rs.getString(3) %></th> 
+                         <th><%=rs.getString(4) %></th> 
+                         <th><%=rs.getString(5) %></th> 
+                 
+          </tr>
+          <%
+      }
+      }
+      catch(Exception e){}      %>
   
 </table> </p>
 </div>
@@ -109,7 +135,7 @@ Categoria:<br>
 <div id="sidebar">
 <ul>
 
-<li >
+<li>
 <IMG SRC="images/baloncesto1.gif">
 </li>
 
@@ -128,3 +154,4 @@ Categoria:<br>
 <!-- end #footer -->
 </body>
 </html>
+
