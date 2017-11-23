@@ -1,6 +1,6 @@
 Create database balonbases; 
 use balonbases;
-create table torneo (ID_torneo int not null auto_increment, nombre varchar(100) not null, }
+create table torneo (ID_torneo int not null auto_increment, nombre varchar(100) not null, 
 	lugar varchar(100) not null, primary key (ID_torneo));
 create table categoria(ID_categoria int not null auto_increment,
  genero varchar(30) not null, edad int not null, primary key (ID_categoria));
