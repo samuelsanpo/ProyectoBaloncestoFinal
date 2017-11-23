@@ -43,7 +43,7 @@ create table estadistica_indv(ID_estadistica_indv int not null auto_increment, f
 alter table estadistica_indv 
 add column tiempo_jugado double not null;
 alter table estadistica_indv  
-add column precision double not null;
+add column precisio double not null;
 alter table estadistica_indv
 add column ID_jugador int not null;
  alter table estadistica_indv 
