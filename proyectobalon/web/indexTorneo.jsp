@@ -7,6 +7,7 @@
 <!DOCTYPE html5>
 <%@page import="java.sql.*"%>
 <%@page import="conneccion.ConnecionMYSQL"%>
+
 <html>
 <head>
 <meta name="keywords" content="" />
@@ -51,7 +52,52 @@
 
 <div class="entry">
 <p><class= " alignleft border" />             
-<form action=Hola>
+   
+ <%
+ String url,query;
+ String nombre,lugar,genero;
+ int edad,fixture;
+  Connection conexion=null; 
+   Statement consulta=null;
+   ResultSet resultado=null;
+try{
+       Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+       url="jdbc:mysql://localhost/bdform";
+       conexion=DriverManager.getConnection(url,"root","Online123");
+       if(conexion!=null){
+         nombre=request.getParameter("torneonombre");
+         lugar=request.getParameter("torneolugar");
+         
+         genero=request.getParameter("Genero");
+         
+         fixture=Integer.parseInt(request.getParameter("Fixture")); 
+        
+       
+query="insert into torneo (nombre,lugar,ID_fixture)values ('"+nombre+"','"+lugar+"',"+fixture+")";
+          consulta=conexion.createStatement();//envia datos
+          consulta.executeUpdate(query);   
+          
+          out.print("<script>alert('REGISTRO GUARDADO');</script>");
+     out.print("<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=formulario.html'>");
+       }
+       else{
+           out.print("<script>    alert('NO HAY CONEXION');</script>");
+           out.print("<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=formulario.html'>");
+       }}
+     catch(Exception e){
+        out.print(e);}
+   
+%>
+    
+    
+    
+    
+    
+    
+    
+    
+    <form id="form1" name="form1" method="post" action="form.jsp">
+        
 Nombre del torneo:<br>
 <input type="text" id="tnombre" name="torneonombre" placeholder="Ingresar nombre torneo">
 <br><br>
@@ -62,24 +108,17 @@ Fixture:<br>
 <select name="Fixture">
 <option value="1">Todos contra todos</option>
 <option value="2">Eliminacion directa</option>
-
+</select><br><br>
+Categoria:<br>
+<select name="Categoria">
+<option value="1">Masculino/20</option>
+<option value="2">Femenino/20</option>
+<option value="3">Masculino/15</option>
 </select><br><br>
 
 
-Genero:<br>
-<select name="Torneo">
-<option value="1">Masculino</option>
-<option value="2">Femenino</option>
-
-</select><br><br>
-Edad:<br>
-<select name="Torneo">
-<option value="1">20</option>
-<option value="2">15</option>
-
-
-</select><br><br>
-<button class="button">Crear torneo</button>
+<input type="submit" name="submit" id="submit" value="Enviar">
+    <input type="reset" name="limpiar" id="limpiar" value="Limpiar">
 </form> 
 </div>
 </div>
